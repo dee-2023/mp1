@@ -1,0 +1,21 @@
+
+.bgmain {
+    padding: 25px;
+    background-image: url("../img/elnidohead.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    color: whitesmoke;
+    background-size: auto;
+}
+
+.textwhite {
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px gray;
+}
+
+.btncenter {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }

@@ -1,0 +1,10 @@
+.asideright {
+    width: 30%;
+    padding-left: 15px;
+    float: right;
+    border-left: 1px;
+}
+
+form {
+   margin-left: 10%;
+}

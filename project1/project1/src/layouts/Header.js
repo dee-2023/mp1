@@ -11,7 +11,7 @@ const Header = () => {
     <header> 
       <Navbar bg="dark" data-bs-theme="dark">
          <Container>
-            <Nav className="me-auto">
+            <Nav>
                <Nav.Link href="/home">Home</Nav.Link>
                <Nav.Link href="/about">About</Nav.Link>
                <Nav.Link href="/contact">Contact</Nav.Link>
