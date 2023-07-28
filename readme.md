@@ -1,2 +1,2 @@
 # Example
-for the project
+For the React activity
