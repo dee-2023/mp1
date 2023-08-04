@@ -1,13 +1,24 @@
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from "react-bootstrap/Col";
 import Row from 'react-bootstrap/Row';
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import './contact.css';
+import React, { useState } from "react";
 
 
-const Contact = () => {
+export const Contact = (props) => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+    
 
+    const handleSubmit = (e) => {   //every form needs handleSubmit
+        e.preventDefault();        
+        console.log(name);
+    }
     return(
         <article className="Col">
             <h1 className="mt-5 text-center">We’d Love to Hear From You, Get In Touch With Us!</h1>
@@ -23,25 +34,25 @@ const Contact = () => {
                 </div>
             </aside>
             <section className="Col-md-9">
-                <Form className="w-50">
+                <Form className="w-50" onSubmit={handleSubmit}>
                     <legend>Contact Us</legend>
                     <Row className="mb-3">
                         <Form.Group as={Col} controlId="firstName">
-                            <Form.Label>Name:</Form.Label>
-                            <Form.Control type="text" placeholder="Name(Required)" required />
+                            <Form.Label htmlFor="name">Name:</Form.Label>
+                            <Form.Control value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Name(Required)" required />
                         </Form.Group>
                         <Form.Group as={Col} controlId="lastName">
-                            <Form.Label>Email:</Form.Label>
-                            <Form.Control type="text" placeholder="Email(Required)" />
+                            <Form.Label htmlFor="email">Email:</Form.Label>
+                            <Form.Control value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Email(Required)" />
                         </Form.Group>
                     </Row>
                     <Form.Group className="mb-3" controlId="email">
-                        <Form.Label>Subject:</Form.Label>
-                        <Form.Control type="email" placeholder="Subject" />
+                        <Form.Label htmlFor="subject">Subject:</Form.Label>
+                        <Form.Control value={subject} onChange={(e) => setSubject(e.target.value)} type="email" placeholder="Subject" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="message">
-                        <Form.Label>Message:</Form.Label>
-                        <Form.Control as="textarea" rows={3} placeholder="Write your message here..." />
+                        <Form.Label htmlFor="message">Message:</Form.Label>
+                        <Form.Control as="textarea" rows={3} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Write your message here..." />
                     </Form.Group>
                     <Button variant="primary" type="submit">Submit</Button>
                 </Form>
@@ -52,8 +63,7 @@ const Contact = () => {
 
             
 
-    )
+    );
+    }
 
-}
-
-export default Contact
+    export default Contact;
