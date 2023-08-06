@@ -16,7 +16,6 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   height: 100vh;
   width: 100%;
   max-width: 800px;
@@ -27,9 +26,6 @@ code {
 header{
   width: 100%;
   background-color: maroon;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
   padding: 0 0.25em;
 }
 
@@ -45,7 +41,7 @@ main{
 
 footer{
   width: 100%;
-  background-color: bisque;
+  background-color: gray;
   align-items: center;
   display: flex;
   padding: 0.25em;
