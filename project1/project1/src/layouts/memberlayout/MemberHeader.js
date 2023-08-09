@@ -12,6 +12,7 @@ const AdminHeader = () => {
    <Navbar bg="dark" data-bs-theme="dark">
       <Container>
          <Nav>
+            <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/booking-schedule">Book a Schedule</Nav.Link>
             <Nav.Link href="/online-shop">Shop</Nav.Link>
 
@@ -20,16 +21,6 @@ const AdminHeader = () => {
    </Navbar>
 
  </header>
-
-/*    <div className='admin-header'> 
-
-     <div> Logo </div>
-      
-           <Link to="/booking-schedule"> Booking Schedule </Link> 
-           <Link to="/online-shop"> Online Shop </Link> 
-
-    </div>
-    */
 
    )
   

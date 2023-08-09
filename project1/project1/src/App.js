@@ -8,9 +8,11 @@ import RootLayout from './layouts/RootLayout';
 import BlogPage from './pages/Blog';
 import Login from './pages/Login';
 
-import MemberLayout from './layouts/member/MemberLayout';
+import MemberLayout from './layouts/memberlayout/MemberLayout';
 import BookingSchedule from './pages/member/BookingSchedule';
 import OnlineShop from './pages/member/OnlineShop';
+
+
 
 
 const App = () => {
@@ -25,11 +27,11 @@ const App = () => {
         <Route path="/about" element={<AboutPage />}> </Route>
         <Route path="/contact" element={<Contact /> }> </Route>
         <Route path="/blog" element={<BlogPage />}></Route>
-        <Route path="/login" element={<Login />}></Route>
- 
+        <Route path='/login' element={<Login />}></Route>
       </Route>
 
       <Route element={<MemberLayout />}>  
+        <Route path="/" element={<HomePage />}> </Route>
         <Route path="/booking-schedule" element={<BookingSchedule />}> </Route>
         <Route path="/online-shop" element={<OnlineShop />}> </Route>
      </Route>   

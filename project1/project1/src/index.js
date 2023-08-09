@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './pages/home.css';
 import './pages/login.css';
+import './img/hammock.png';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

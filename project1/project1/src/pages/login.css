@@ -1,7 +1,7 @@
 .App-login {
     text-align: center;
     display: flex;
-    min-height: 100vh;
+/*  min-height: 100vh;  */
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(79deg, #fcfced, #fcedfc 48%, #ebf6ff);
@@ -38,9 +38,5 @@
     cursor: pointer;
   }
   
-  .link-btn {
-    background: none;
-    color:  rgb(31, 17, 158);
-    text-decoration: underline;
-  }
+  
   

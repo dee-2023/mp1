@@ -1,14 +1,36 @@
 
 .bgmain {
     padding: 25px;
-    background-image: url("../img/elnidohead.png");
+    background-image: url("../img/hammock.png");
     background-position: center;
     background-repeat: no-repeat;
     color: whitesmoke;
     background-size: auto;
 }
+.headerimage {
+    background-image: linear-gradient(79deg, #fcfced, #fcedfc 48%, #ebf6ff);
+    min-height: 700px;
+    padding: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+    background-size: auto;
 
+}
 .textwhite {
     color: whitesmoke;
     text-shadow: 1px 1px 2px gray;
 }
+
+.navbar {
+   background-image: linear-gradient(79deg, #268f8e, #83dfe3, #cec8c1, #f6f0fc, #94a7a8);        
+}
+
+.xperience {
+    color: #34521f
+}
+
+.card:hover {
+    transform: scale(1.05); /* Increase card size on hover */
+    box-shadow: 0 4px 8px rgba( 0, 0, 0, 0.1); /* Add a shadow on hover */
+  }
