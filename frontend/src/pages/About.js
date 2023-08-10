@@ -1,4 +1,4 @@
-import caption from '../img/relax.jpg';
+import girl from '../img/relax.jpg';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Image, Row, Col } from 'react-bootstrap';
 import './contact.css';
@@ -23,11 +23,11 @@ const About = () => {
         </Container>
 */
 
-<Container className="Col text-center" >
+<Container className="Col mtop text-center" >
     <h2 className="text-center"> About Us </h2><hr /><hr />
     <Row>
         <Col xs={6} md={6}>
-            <Image src={caption} alt="girl on kayak" />
+            <Image src={girl} alt="girl on kayak" />
         </Col>
         <Col xs={12} md={6} className="asideright">
             <p><br /><br />In a world inundated with emails, fake news, status updates, smartphones and connected watches, we exist to bring you back to the moment.</p><br />

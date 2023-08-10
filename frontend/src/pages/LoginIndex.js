@@ -19,7 +19,7 @@ const LoginIndex = () => {
                 currentForm === "login" ? 
                 <Routes>
                     <Route element={<LoginIndex />}>
-                    <Route path='/login' element={<Login onFormSwitch={toggleForm} />}></Route></Route></Routes>
+                    <Route path='/login' element={<Login />}></Route></Route></Routes>
 
                 : 
                 <Routes>

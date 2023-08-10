@@ -5,17 +5,29 @@
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(79deg, #fcfced, #fcedfc 48%, #ebf6ff);
+    margin-top: 75px;
+    padding-bottom: 50px;
   }
   
-  .auth-form-container, .login-form, .register-form {
+  .form-container, .register-form {
+    background-image: linear-gradient(79deg, #fcfced, #fcedfc 48%, #ebf6ff);
     display: flex;
     flex-direction: column; 
+    padding: 10px 100px 20px;
+    margin-top: 20px;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column; 
+    
   }
   
   .auth-form-container {
-    padding: 5rem;
+    padding: 1rem 3rem;
     border: 1px solid white;
     border-radius: 10px;
+  
   }
   
   label {
@@ -24,8 +36,7 @@
   }
   
   input {
-    margin: 0.5rem 0;
-    padding: 1rem;
+
     border: none;
     border-radius: 10px;
   }
@@ -33,7 +44,7 @@
   button {
     border: none;
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     cursor: pointer;
   }

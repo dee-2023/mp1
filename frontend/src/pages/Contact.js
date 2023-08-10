@@ -20,8 +20,8 @@ export const Contact = (props) => {
         console.log(name);
     }
     return(
-        <article className="Col">
-            <h1 className="mt-5 text-center">We’d Love to Hear From You, Get In Touch With Us!</h1>
+        <article className="Col mtop">
+            <h1 className="text-center">We’d Love to Hear From You, Get In Touch With Us!</h1>
             <hr />
             <aside className="Col-md-3">
                 <div id="contact-info-widget" className='asideright'>

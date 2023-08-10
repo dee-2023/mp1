@@ -9,13 +9,20 @@ import elNidoHead from '../img/elnidohead.png';
 const Home = () => {
 
     return(
-    <Container className="headerimage">
+    <Container className="homebody">
+        <Container className="text-center headtext">
+            <h2 className='h1' >Welcome to Vacation Island</h2>
+            <h4>A Paradise within Paradise</h4>
+        </Container>
+
+
         <Container className="text-center">
-            <h1 className="xperience" >Experience our island resorts</h1>
+            <h4 className="xperience" >Experience our island resorts</h4>
             
             <Button className='btn-success btn-lg'>Plan Your Adventure Now</Button>
+
         </Container>
-        <CardGroup>
+        <CardGroup className='mt-5'>
             <Card className='m-3'>
                 <Card.Img variant="top" src={hammock}  />
                 <Card.Body>
@@ -50,6 +57,10 @@ const Home = () => {
             </Card>
         </CardGroup>
     </Container>
+
+
+
+
 
     );
 

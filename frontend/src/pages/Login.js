@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Container, Card, Form, Button } from 'react-bootstrap';
+import register from './Register';
+
 
 
 
@@ -31,31 +33,31 @@ export const Login = (props) => {
         setErrMsg(errLogin);
     }, []);
  */   
-      return (
-        <Container className='auth-form-container App-login'>
-            <Card className='auth-form-container App-login'>
+    return (
+        <Container className='App-login'>
+            <Card className='form-container'>
                 <h3>Login here</h3>
                 <Form.Group className="login-form" onSubmit={handleSubmit}>
-                    <Form.Label htmlFor="username">Username</Form.Label><br />
-                    <input 
-                        value={username} 
-                        onChange={(e) => setUsername(e.target.value)} 
-                        type="username" 
-                        placeholder="username" 
-                    /><br />
+                <Form.Label htmlFor="username">Username</Form.Label><br />
+                <input 
+                    value={username} 
+                    onChange={(e) => setUsername(e.target.value)} 
+                    type="username" 
+                    placeholder="username" 
+                /><br />
 
-                    <Form.Label htmlFor="password">Password</Form.Label><br />
-                    <input 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
-                        type="password" 
-                        placeholder="password" 
-                    /><br />
+                <Form.Label htmlFor="password">Password</Form.Label><br />
+                <input 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    type="password" 
+                    placeholder="password" 
+                /><br />
 
-                    <Button variant="success"> Login </Button>
+                <Button variant="success"> Login </Button>
                 </Form.Group><br />
             
-              <p> Don't have an account yet?</p><Button variant="primary" onClick={(e) => props.onFormSwitch('register')}> Register here</Button>
+              <p> Don't have an account yet?</p><Button variant="primary" /*as="a" href="/Register" */ onClick={(e) => props.onFormSwitch({register})}> Register here</Button>
             </Card>
         </Container>
 
