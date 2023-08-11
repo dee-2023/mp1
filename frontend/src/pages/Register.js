@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Form, Button, Container } from 'react-bootstrap';
 
-const Register = (props) => { 
+const Register = () => { 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
     }
 
@@ -23,7 +25,7 @@ const Register = (props) => {
             <input value={password} onChange={(e) => setPassword(e.target.value)} />
         </Form>
             <p>Already have an account</p>
-            <Button variant="success" onClick={(e) => props.onFormSwitch('login')}  >Login</Button>
+            <Button variant="success" onClick={() => navigate('/login')}  >Login</Button>
     </Container>   
     );
 

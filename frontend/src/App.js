@@ -7,10 +7,12 @@ import Contact from './pages/Contact';
 import RootLayout from './layouts/RootLayout';
 import BlogPage from './pages/Blog';
 import Login from './pages/Login';
+import Register from './pages/Register';
 
 import MemberLayout from './layouts/memberlayout/MemberLayout';
 import BookingSchedule from './pages/member/BookingSchedule';
 import OnlineShop from './pages/member/OnlineShop';
+
 
 
 
@@ -28,6 +30,7 @@ const App = () => {
         <Route path="/contact" element={<Contact /> }> </Route>
         <Route path="/blog" element={<BlogPage />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/register' element={<Register />}></Route>
       </Route>
 
       <Route element={<MemberLayout />}>  

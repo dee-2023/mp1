@@ -1,68 +1,69 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Container, Card, Form, Button } from 'react-bootstrap';
-import register from './Register';
 
-
-
-
-
-export const Login = (props) => {
-   
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-  
-
-    const handleSubmit = (e) => {
-        e.preventDefault();        // so the page will not be reloaded causing to lose our state
-        console.log(username);
-
-    }
-/*
-        if(username === 'member' && password === '123456'){
-            localStorage.setItem('isLog', 'true');
-            navigate('/booking-schedule'); 
+    const Login = ()=>{
+        const navigate = useNavigate();
+        const [username, setUsername] = useState('');
+        const [password, setPassword] = useState('');
+        const [errMsg, setErrMsg] = useState('');
+         
+        const handleSubmit = async (e)=>{
+            e.preventDefault();
+            console.log('Test ' + username + "  " + password)
     
-          } else {
-            localStorage.setItem('isLog', 'false');
-            setErrMsg('Invalid Username and Password')
+            if(username === 'admin' && password === '123456'){
+                localStorage.setItem('isLog', 'true');
+                navigate('/booking-schedule'); 
+    
+            } else {
+                localStorage.setItem('isLog', 'false');
+                setErrMsg('Username and Password does not match')
+            }
+    
+  
+        }
+    
+        useEffect( ()=> {
+            let errLogin = localStorage.getItem('errorInLogin');
+            setErrMsg(errLogin);
+        }, []);
+    
+    
+    
+        return (
+            <Container className='App-login'>
+                <Card className='form-container'>
+                    <h3>Login here</h3>
+                    <Form onSubmit={handleSubmit} >           
+                        <b>  {errMsg} </b><b />
+                        <Form.Label htmlFor="username">Username</Form.Label>
+                        <Form.Control
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)} 
+                            type="username" 
+                            placeholder="username" 
+                        />
+                        
+                    <Form.Label htmlFor="password">Password</Form.Label>
+                    <Form.Control
+                        value={password} 
+                        onChange={(e) => setPassword(e.target.value)} 
+                        type="password" 
+                        placeholder="password" 
+                    />
+    
+                    <Button variant="success" type="submit"> Login </Button>
+                    
+                    </Form>
+                  <p> Don't have an account yet?</p><Button variant="primary" onClick={()=> navigate('register')}> Register here</Button>
+                </Card>
+            </Container>  
+    
+    
+        )
+    
+    
+    };
 
-    }   }
-
-    useEffect( () => {
-        let errLogin = localStorage.getItem('errorInLogin');
-        setErrMsg(errLogin);
-    }, []);
- */   
-    return (
-        <Container className='App-login'>
-            <Card className='form-container'>
-                <h3>Login here</h3>
-                <Form.Group className="login-form" onSubmit={handleSubmit}>
-                <Form.Label htmlFor="username">Username</Form.Label><br />
-                <input 
-                    value={username} 
-                    onChange={(e) => setUsername(e.target.value)} 
-                    type="username" 
-                    placeholder="username" 
-                /><br />
-
-                <Form.Label htmlFor="password">Password</Form.Label><br />
-                <input 
-                    value={password} 
-                    onChange={(e) => setPassword(e.target.value)} 
-                    type="password" 
-                    placeholder="password" 
-                /><br />
-
-                <Button variant="success"> Login </Button>
-                </Form.Group><br />
-            
-              <p> Don't have an account yet?</p><Button variant="primary" /*as="a" href="/Register" */ onClick={(e) => props.onFormSwitch({register})}> Register here</Button>
-            </Card>
-        </Container>
-
-      )
-
-
-}
-export default Login;
+    export default Login;

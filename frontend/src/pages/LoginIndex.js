@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './login.css';
 import Login from "./Login";
 import Register from "./Register";
-import { Routes, Route } from 'react-router-dom';
+
 
 const LoginIndex = () => {
     const [currentForm, setCurrentForm] = useState('login');
@@ -16,16 +16,12 @@ const LoginIndex = () => {
        
         <div className="App">
             {
-                currentForm === "login" ? 
-                <Routes>
-                    <Route element={<LoginIndex />}>
-                    <Route path='/login' element={<Login />}></Route></Route></Routes>
-
-                : 
-                <Routes>
-                    <Route element={<LoginIndex />}>
-                    <Route path="/register" element={<Register /> }></Route></Route></Routes>
-               
+               <div className="App">
+               {
+                 currentForm === "login" ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
+               }
+             
+             </div>
                 
             }
         </div>
