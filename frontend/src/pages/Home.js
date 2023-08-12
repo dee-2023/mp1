@@ -35,7 +35,7 @@ const Home = () => {
             </Card>
 
             <Card className='m-3'>
-                <Card.Img variant="top" src={elNidoHead} />
+                <Card.Img variant="top" src={elNidoHead}/>
                 <Card.Body>
                     <Card.Title>Tour B</Card.Title>
                     <Card.Text>

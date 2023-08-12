@@ -1,18 +1,26 @@
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Card, Form, Button } from 'react-bootstrap';
+import apiRequest from "../datafetch/apiRequest";
 
-    const Login = ()=>{
+    const Login = async ()=>{
         const navigate = useNavigate();
         const [username, setUsername] = useState('');
         const [password, setPassword] = useState('');
         const [errMsg, setErrMsg] = useState('');
          
-        const handleSubmit = async (e)=>{
-            e.preventDefault();
-            console.log('Test ' + username + "  " + password)
+       const handleSubmit = async (e)=>{
+           e.preventDefault();
+   /*         console.log('Test ' + username + "  " + password)
+
+            try { 
+                const res = await axios.post('/api/login', {
+                    username,
+                    password,
+                });
+            
     
-            if(username === 'admin' && password === '123456'){
+            if(res.data.success){
                 localStorage.setItem('isLog', 'true');
                 navigate('/booking-schedule'); 
     
@@ -20,16 +28,40 @@ import { Container, Card, Form, Button } from 'react-bootstrap';
                 localStorage.setItem('isLog', 'false');
                 setErrMsg('Username and Password does not match')
             }
+            } catch (errMsg) {
+                console.error(errMsg);
+            }
     
   
         }
     
-        useEffect( ()=> {
-            let errLogin = localStorage.getItem('errorInLogin');
-            setErrMsg(errLogin);
-        }, []);
+     */
     
+        const objReq = {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/x-www-form-urlencoded',
+            },
+            body:"username="+username+"&password="+password,
+         }
+
+
+         try {
     
+          const result = await apiRequest('http://localhost:5000/login', objReq);
+          const okresult = await result.json();
+       
+           if (okresult.code === "success") {
+              localStorage.setItem('token', okresult.accessToken); 
+              setErrMsg(okresult.msg)
+            } else {
+                setErrMsg(okresult.msg);
+            } 
+        }catch (error) {
+                console.error(error);
+                setErrMsg("An error occurred while logging in.");
+            }
+        };
     
         return (
             <Container className='App-login'>
