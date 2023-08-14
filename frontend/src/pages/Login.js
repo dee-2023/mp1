@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Card, Form, Button } from 'react-bootstrap';
 import apiRequest from "../datafetch/apiRequest";
 
-    const Login = async ()=>{
+    const Login = ()=>{
         const navigate = useNavigate();
         const [username, setUsername] = useState('');
         const [password, setPassword] = useState('');
@@ -11,8 +11,8 @@ import apiRequest from "../datafetch/apiRequest";
          
        const handleSubmit = async (e)=>{
            e.preventDefault();
-   /*         console.log('Test ' + username + "  " + password)
-
+            console.log('Test ' + username + "  " + password)
+/*
             try { 
                 const res = await axios.post('/api/login', {
                     username,
@@ -35,33 +35,32 @@ import apiRequest from "../datafetch/apiRequest";
   
         }
     
-     */
+ */    
     
         const objReq = {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type' : 'application/x-www-form-urlencoded',
             },
             body:"username="+username+"&password="+password,
          }
-
-
-         try {
     
           const result = await apiRequest('http://localhost:5000/login', objReq);
           const okresult = await result.json();
        
            if (okresult.code === "success") {
+              localStorage.setItem('isLog', 'true');
               localStorage.setItem('token', okresult.accessToken); 
               setErrMsg(okresult.msg)
             } else {
                 setErrMsg(okresult.msg);
+                localStorage.setItem('isLog', 'false');
             } 
-        }catch (error) {
-                console.error(error);
-                setErrMsg("An error occurred while logging in.");
-            }
-        };
+       }
+       useEffect( () => {
+        let errLogin = localStorage.getItem('errorInLogin');
+        setErrMsg(errLogin);
+       }, []);
     
         return (
             <Container className='App-login'>
