@@ -18,7 +18,7 @@ const Header = () => {
                <Nav.Link href="/home"><b>Home</b></Nav.Link>
                <Nav.Link href="/about"><b>About</b></Nav.Link>
                <Nav.Link href="/contact"><b>Contact</b></Nav.Link>
-               <Nav.Link href="/blog"><b>Blog</b></Nav.Link>
+               <Nav.Link href="/blog-page"><b>Blog</b></Nav.Link>
             </Nav>  
             <Nav>
                <Nav className="justify-content-end">

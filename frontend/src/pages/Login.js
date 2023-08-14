@@ -52,6 +52,7 @@ import apiRequest from "../datafetch/apiRequest";
               localStorage.setItem('isLog', 'true');
               localStorage.setItem('token', okresult.accessToken); 
               setErrMsg(okresult.msg)
+              navigate('booking-schedule')
             } else {
                 setErrMsg(okresult.msg);
                 localStorage.setItem('isLog', 'false');
@@ -64,7 +65,7 @@ import apiRequest from "../datafetch/apiRequest";
     
         return (
             <Container className='App-login'>
-                <Card className='form-container'>
+                <Card className='form-container '>
                     <h3>Login here</h3>
                     <Form onSubmit={handleSubmit} >           
                         <b>  {errMsg} </b><b />

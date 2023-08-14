@@ -7,7 +7,7 @@ const Main = ( {componentData} ) => {
 
     return(
 
-       <main>
+       <main className='mtop'>
 
            <Outlet />
            

@@ -5,7 +5,7 @@ import HomePage from './pages/Home';
 import AboutPage from './pages/About';
 import Contact from './pages/Contact';
 import RootLayout from './layouts/RootLayout';
-import BlogPage from './pages/Blog';
+import BlogPage from './pages/BlogPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/home" element={<HomePage />}> </Route>
         <Route path="/about" element={<AboutPage />}> </Route>
         <Route path="/contact" element={<Contact /> }> </Route>
-        <Route path="/blog" element={<BlogPage />}></Route>
+        <Route path="/blog-page" element={<BlogPage />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
       </Route>
