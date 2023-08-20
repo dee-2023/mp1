@@ -4,16 +4,46 @@ import '../img/relax.jpg';
 import hammock from '../img/hammock.png';
 import relax from '../img/relax.jpg';
 import elNidoHead from '../img/elnidohead.png';
-
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Home = () => {
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      };
+
     return(
+        
     <Container className="homebody">
+  <div className="carousel-container">
+      <Slider {...settings}>
+        <div>
+          <img src={hammock} alt="hammock" />
+        </div>
+        <div>
+          <img src={relax} alt="girl" />
+        </div>
+        <div>
+          <img src={elNidoHead} alt="sample3" />
+        </div>
+      </Slider>
+    </div>
+
+
+
+
+
         <Container className="text-center headtext">
             <h2 className='h1' >Welcome to Vacation Island</h2>
             <h4>A Paradise within Paradise</h4>
-        </Container>
+        </Container>       
 
 
         <Container className="text-center">
@@ -64,7 +94,7 @@ const Home = () => {
 
     );
 
-
+    
 }
 
 export default Home

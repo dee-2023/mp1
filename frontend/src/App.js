@@ -10,8 +10,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 
 import MemberLayout from './layouts/memberlayout/MemberLayout';
-import BookingSchedule from './pages/member/BookingSchedule';
-import OnlineShop from './pages/member/OnlineShop';
+import Dashboard from './pages/member/Dashboard';
+import Preferences from './pages/member/Preferences';
 
 
 
@@ -35,8 +35,8 @@ const App = () => {
 
       <Route element={<MemberLayout />}>  
         <Route path="/" element={<HomePage />}> </Route>
-        <Route path="/booking-schedule" element={<BookingSchedule />}> </Route>
-        <Route path="/online-shop" element={<OnlineShop />}> </Route>
+        <Route path="/Dashboard" element={<Dashboard />}> </Route>
+        <Route path="/Preferences" element={<Preferences />}> </Route>
      </Route>   
     </Routes>
 

@@ -34,7 +34,7 @@ const BlogPage = () => {
   ];
 
   return (
-    <div className='mtop homebody'>
+    <div className='homebody'>
       <h1>My Blog</h1>
       {blogPosts.map((post, index) => (
         <BlogPost
