@@ -6,7 +6,7 @@ const MemberContent = ()=>{
 
     return(
 
-        <div className="member-content">
+        <div className="member-content mtop">
 
         
         <Outlet></Outlet>

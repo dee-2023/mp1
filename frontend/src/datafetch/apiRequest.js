@@ -1,18 +1,20 @@
 
 const apiRequest = async (url='', optionObj=null, errMesg=null) => {
 
+
     try{
         const response = await fetch(url, optionObj);
 
-        if(!response.ok) throw Error('Please reload the app');
+        if(!response.ok) throw new Error('API request failed');
         
-        return response;
+        const responseData = await response.json();
+        return responseData;
 
        }catch(err){
         console.log('error : ' + err.stack)
 
        }finally{
-        console.log('done on processing')   
+        console.log('done on processing')
        }
 
 

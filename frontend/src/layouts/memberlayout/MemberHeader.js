@@ -13,7 +13,7 @@ const AdminHeader = () => {
       <Container>
          <Nav>
             <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/booking-schedule">Book a Schedule</Nav.Link>
+            <Nav.Link href="/dashboard">Dashboard</Nav.Link>
             <Nav.Link href="/online-shop">Shop</Nav.Link>
 
          </Nav>

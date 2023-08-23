@@ -11,7 +11,7 @@ import Register from './pages/Register';
 
 import MemberLayout from './layouts/memberlayout/MemberLayout';
 import Dashboard from './pages/member/Dashboard';
-import Preferences from './pages/member/Preferences';
+import Shop from './pages/member/OnlineShop';
 
 
 
@@ -35,8 +35,8 @@ const App = () => {
 
       <Route element={<MemberLayout />}>  
         <Route path="/" element={<HomePage />}> </Route>
-        <Route path="/Dashboard" element={<Dashboard />}> </Route>
-        <Route path="/Preferences" element={<Preferences />}> </Route>
+        <Route path="/dashboard" element={<Dashboard />}> </Route>
+        <Route path="/online-shop" element={<Shop />}> </Route>
      </Route>   
     </Routes>
 

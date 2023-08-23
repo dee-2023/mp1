@@ -47,6 +47,10 @@
     border-radius: 10px;
     cursor: pointer;
   }
+
+  .red {
+    color: red;
+  }
   
   
   

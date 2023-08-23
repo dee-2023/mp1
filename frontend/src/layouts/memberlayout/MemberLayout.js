@@ -5,15 +5,14 @@ import { useEffect } from 'react';
 
 
 const MemberLayout = () =>{
-
-const navigate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect( ()=> {
         let authLogin = localStorage.getItem('isLog');  
         console.log(authLogin);
 
         if ( authLogin === 'false') {
-            //localStorage.setItem('errorInLogin', 'You need to login');
+            localStorage.setItem('errorInLogin', 'You need to login');
             navigate('/login'); 
         }
     })
